@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="body">
+    <div id="cover">
+      <button id="light_btn">Turn on light 💡</button>
+      <button id="music_btn">Please Click Here</button>
+    </div>
+
+    <div id="main">
+      <h1>This is to appreciate your efforts.😃</h1>
+      <img src="img/hashimi.jpg" alt="user's image" />
+      <h3>Mr.Jamshid Hashimi</h3>
+      <h2>Please click the gift box to open your gift.😍</h2>
+      <img src="img/gift3.png" alt="gift image " id="gift_box" />
+      <img src="img/medal.png" alt="gift image" id="gift" />
+    </div>
+
+    <!-- Script codes -->
+    <script>
+      const music_btn = document.getElementById("music_btn");
+      const main_div = document.getElementById("main");
+      const cover_div = document.getElementById("cover");
+      const gift_box = document.getElementById("gift_box");
+      const gift = document.getElementById("gift");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        music_btn.style.display = "none";
+        main_div.style.display = "none";
+        gift.style.display = "none";
+      });
+
+      let btn = document.getElementById("light_btn");
+      let body = document.getElementById("body");
+      const path = ["url(img/light1.jpg)"];
+
+      btn.addEventListener("click", function () {
+        body.style.backgroundImage = path[0];
+        music_btn.style.display = "block";
+        btn.remove();
+      });
+
+      music_btn.addEventListener("click", function () {
+        body.style.backgroundImage = path[0];
+        main_div.style.display = "flex";
+        cover_div.remove();
+      });
+
+      gift_box.addEventListener("click", function () {
+        gift_box.style.display = "none";
+        gift_box.style.display = "none";
+        gift.style.display = "block";
+      });
+
+      gift.addEventListener("click", function () {
+        gift.style.display = "none";
+        gift_box.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
